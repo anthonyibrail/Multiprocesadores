@@ -16,13 +16,13 @@ int main()
         #pragma omp sections
         {
             #pragma omp section
-                imageGray("4.bmp", "imageGray_4.bmp");
+                imageGray("5.bmp", "imageGray_5.bmp");
             #pragma omp section
-                imageBlue("4.bmp", "imageBlue_4.bmp");
+                imageBlue("5.bmp", "imageBlue_5.bmp");
             #pragma omp section
-                imageGreen("4.bmp", "imageGreen_4.bmp");
+                imageGreen("5.bmp", "imageGreen_5.bmp");
             #pragma omp section
-                imageRed("4.bmp", "imageRed_4.bmp");
+                imageRed("5.bmp", "imageRed_5.bmp");
         }
     }
     return 0;
