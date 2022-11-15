@@ -42,7 +42,7 @@ int main()
    }
 }
    const double endTime = omp_get_wtime();
-   printf("tomo (%lf) segundos\n", (endTime - startTime));
+   printf("Tiempo (%lf) segundos\n", (endTime - startTime));
 
    fclose(fptr);
    fclose(fptr1);
