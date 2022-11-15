@@ -28,17 +28,17 @@ int main()
      #pragma omp sections
     {
        #pragma omp section
-         (void)iteracion(100000,fptr);//20//2000900
+         (void)iteracion(100000 ,fptr);//20//2000900
        #pragma omp section
-         (void)iteracion(100000,fptr1);//200//2000400
+         (void)iteracion(100000 ,fptr1);//200//2000400
        #pragma omp section
-         (void)iteracion(100000,fptr2);//2000//2000700
+         (void)iteracion(100000 ,fptr2);//2000//2000700
        #pragma omp section
-         (void)iteracion(100000,fptr3);//20000//2000800
+         (void)iteracion(100000 ,fptr3);//20000//2000800
        #pragma omp section
-         (void)iteracion(100000,fptr4);//200000//2000500
+         (void)iteracion(100000 ,fptr4);//200000//2000500
        #pragma omp section
-         (void)iteracion(100000,fptr5);//2000000//2000100
+         (void)iteracion(100000 ,fptr5);//2000000//2000100
    }
 }
    const double endTime = omp_get_wtime();
@@ -64,7 +64,7 @@ void iteracion(int N, FILE *x)
             h=(b-a)/N;
             t=a+(h*i);
             ab=t*t;
-            w=w+h*(1+sqrt(t-w));
+            w=w+h*(1+pow(t-w,2));
             fprintf(x, "%f\t %f \t numero de thread:%d\n", t+h, w,omp_get_thread_num());
         } 
 }

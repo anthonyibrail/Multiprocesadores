@@ -1,9 +1,9 @@
 /*CACHÉ*/
 #include <stdio.h>
 #include <omp.h>
-static long num_pasos= 1000000000;
+static long num_pasos= 100000; //1000000000;
 double paso; 
-#define NUM_THREADS 100
+#define NUM_THREADS 6
 void main(){
     int i, nthreads;
     double pi, sum [NUM_THREADS], t1, t2, tiempo;
@@ -31,6 +31,8 @@ void main(){
     
     t2 = omp_get_wtime();
     tiempo =t2-t1;
+    printf("No. de pasos = (%li)\n", num_pasos);
+    printf("No. de threads = (%li)\n", NUM_THREADS);
     printf("pi = (%lf)\n", pi);
-    printf("tomo (%lf) segundos \n", tiempo);
+    printf("Tiempo (%lf) segundos \n", tiempo);
 }

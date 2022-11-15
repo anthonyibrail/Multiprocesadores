@@ -8,7 +8,7 @@ FILE *fptr;
 
 int main()
 {
-int N = 6000000;
+int N = 100000;
 fptr=fopen("Euler_n_02.txt","w");
 printf("Numero de pasos:%d \n", N);
 fprintf(fptr, "Datos que encuentra el metodo de Euler(variable ind.\t variable dep.\t numero de thread)\n");
@@ -37,6 +37,6 @@ fprintf(fptr, "Datos que encuentra el metodo de Euler(variable ind.\t variable d
     for(i=0;i<N;i++){
         fprintf(fptr, "%f\t %lf\t thread: %d\n", t[i], w[i], thrd[i]);
     }
-    printf("tomo (%lf) segundos \n", tiempo);
+    printf("Tiempo (%lf) segundos \n", tiempo);
 fclose(fptr);
 }
