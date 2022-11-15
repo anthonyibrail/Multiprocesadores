@@ -64,7 +64,7 @@ void iteracion(int N, FILE *x)
             h=(b-a)/N;
             t=a+(h*i);
             ab=t*t;
-            w=w+h*(1+pow(t-w,2));
+            w=w+h*(1+pow(t-w,2)); //En esta línea se modifica la función matemática por ejemplo pow(t-w,2), exp(t-w), sin(t-w), cos(t-w), tan(t-w), asin(t-w), acos(t-w), atan(t-w), sqrt(t-w) 
             fprintf(x, "%f\t %f \t numero de thread:%d\n", t+h, w,omp_get_thread_num());
         } 
 }
