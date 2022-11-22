@@ -17,43 +17,43 @@ int main(){
 		#pragma omp sections
 		{
 			#pragma omp section
-				blurring("sample1_blur_sections_gris1.bmp", 3);
+				blurring("sample5_blur_sections_gris1.bmp", 3);
 			#pragma omp section
-				blurring("sample1_blur_sections_gris2.bmp", 5);
+				blurring("sample5_blur_sections_gris2.bmp", 5);
 			#pragma omp section
-				blurring("sample1_blur_sections_gris3.bmp", 7);
+				blurring("sample5_blur_sections_gris3.bmp", 7);
 			#pragma omp section
-				blurring("sample1_blur_sections_gris4.bmp", 9);
+				blurring("sample5_blur_sections_gris4.bmp", 9);
 			#pragma omp section
-				blurring("sample1_blur_sections_gris5.bmp", 11);
+				blurring("sample5_blur_sections_gris5.bmp", 11);
 			#pragma omp section
-				blurring("sample1_blur_sections_gris6.bmp", 13);
+				blurring("sample5_blur_sections_gris6.bmp", 13);
 			#pragma omp section
-				blurring("sample1_blur_sections_gris7.bmp", 15);
+				blurring("sample5_blur_sections_gris7.bmp", 15);
 			#pragma omp section
-				blurring("sample1_blur_sections_gris8.bmp", 17);
+				blurring("sample5_blur_sections_gris8.bmp", 17);
 			#pragma omp section
-				blurring("sample1_blur_sections_gris9.bmp", 19);
+				blurring("sample5_blur_sections_gris9.bmp", 19);
 			#pragma omp section
-				blurring_inv("sample1_blur_sections_gris10.bmp", 21);
+				blurring_inv("sample5_blur_sections_gris10.bmp", 21);
 			#pragma omp section
-				blurring_inv("sample1_blur_sections_gris11.bmp", 19);   
+				blurring_inv("sample5_blur_sections_gris11.bmp", 19);   
 			#pragma omp section
-				blurring_inv("sample1_blur_sections_gris12.bmp", 17);
+				blurring_inv("sample5_blur_sections_gris12.bmp", 17);
 			#pragma omp section
-				blurring_inv("sample1_blur_sections_gris13.bmp", 15);
+				blurring_inv("sample5_blur_sections_gris13.bmp", 15);
 			#pragma omp section
-				blurring_inv("sample1_blur_sections_gris14.bmp", 13);
+				blurring_inv("sample5_blur_sections_gris14.bmp", 13);
 			#pragma omp section
-				blurring_inv("sample1_blur_sections_gris15.bmp", 11);
+				blurring_inv("sample5_blur_sections_gris15.bmp", 11);
 			#pragma omp section
-				blurring_inv("sample1_blur_sections_gris16.bmp", 9);
+				blurring_inv("sample5_blur_sections_gris16.bmp", 9);
 			#pragma omp section
-				blurring_inv("sample1_blur_sections_gris17.bmp", 7);
+				blurring_inv("sample5_blur_sections_gris17.bmp", 7);
 			#pragma omp section
-				blurring_inv("sample1_blur_sections_gris18.bmp", 5);  
+				blurring_inv("sample5_blur_sections_gris18.bmp", 5);  
 			#pragma omp section
-				blurring_inv("sample1_blur_sections_gris19.bmp", 3);
+				blurring_inv("sample5_blur_sections_gris19.bmp", 3);
 		}
 	}
 
@@ -70,7 +70,7 @@ void blurring(char outputImageName[], int sizeM){
 	FILE *image, *outputImage, *lecturas;
 	
 	// Open original image
-	image = fopen("1.bmp","rb");                 //Imagen original a transformar
+	image = fopen("5.bmp","rb");                 //Imagen original a transformar
 	// Create new image
 	outputImage = fopen(outputImageName,"wb");      //Imagen transformada
 	
@@ -243,7 +243,7 @@ void blurring_inv(char outputImgName[], int sizeM){
 	FILE *image, *outputImage, *lecturas;
 
 	// Open original image
-	image = fopen("1.bmp","rb");
+	image = fopen("5.bmp","rb");
 	// Create new image
 	outputImage = fopen(outputImgName,"wb");
 
