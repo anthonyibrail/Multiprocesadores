@@ -7,51 +7,62 @@ void blurring(char outputImage[], int sizeM);
 void blurring_inv(char outputImgName[], int sizeM);
 
 int main(){
-  #pragma omp parallel
-    {
-        #pragma omp sections
-        {
-        #pragma omp section
-            blurring("sample_blur_sections_gris1.bmp", 3);
-        #pragma omp section
-            blurring("sample_blur_sections_gris2.bmp", 5);
-        #pragma omp section
-            blurring("sample_blur_sections_gris3.bmp", 7);
-        #pragma omp section
-            blurring("sample_blur_sections_gris4.bmp", 9);
-        #pragma omp section
-            blurring("sample_blur_sections_gris5.bmp", 11);
-        #pragma omp section
-            blurring("sample_blur_sections_gris6.bmp", 13);
-        #pragma omp section
-            blurring("sample_blur_sections_gris7.bmp", 15);
-        #pragma omp section
-            blurring("sample_blur_sections_gris8.bmp", 17);
-        #pragma omp section
-            blurring("sample_blur_sections_gris9.bmp", 19);
-        #pragma omp section
-            blurring_inv("sample_blur_sections_gris10.bmp", 21);
-        #pragma omp section
-            blurring_inv("sample_blur_sections_gris11.bmp", 19);   
-        #pragma omp section
-            blurring_inv("sample_blur_sections_gris12.bmp", 17);
-        #pragma omp section
-            blurring_inv("sample_blur_sections_gris13.bmp", 15);
-        #pragma omp section
-            blurring_inv("sample_blur_sections_gris14.bmp", 13);
-        #pragma omp section
-            blurring_inv("sample_blur_sections_gris15.bmp", 11);
-        #pragma omp section
-            blurring_inv("sample_blur_sections_gris16.bmp", 9);
-        #pragma omp section
-            blurring_inv("sample_blur_sections_gris17.bmp", 7);
-        #pragma omp section
-            blurring_inv("sample_blur_sections_gris18.bmp", 5);  
-        #pragma omp section
-            blurring_inv("sample_blur_sections_gris19.bmp", 3);
-        }
-    }
-  return 0;
+
+
+	// Measure initial time (startTime)
+	const double startTime = omp_get_wtime();
+		
+	#pragma omp parallel
+	{
+		#pragma omp sections
+		{
+			#pragma omp section
+				blurring("sample1_blur_sections_gris1.bmp", 3);
+			#pragma omp section
+				blurring("sample1_blur_sections_gris2.bmp", 5);
+			#pragma omp section
+				blurring("sample1_blur_sections_gris3.bmp", 7);
+			#pragma omp section
+				blurring("sample1_blur_sections_gris4.bmp", 9);
+			#pragma omp section
+				blurring("sample1_blur_sections_gris5.bmp", 11);
+			#pragma omp section
+				blurring("sample1_blur_sections_gris6.bmp", 13);
+			#pragma omp section
+				blurring("sample1_blur_sections_gris7.bmp", 15);
+			#pragma omp section
+				blurring("sample1_blur_sections_gris8.bmp", 17);
+			#pragma omp section
+				blurring("sample1_blur_sections_gris9.bmp", 19);
+			#pragma omp section
+				blurring_inv("sample1_blur_sections_gris10.bmp", 21);
+			#pragma omp section
+				blurring_inv("sample1_blur_sections_gris11.bmp", 19);   
+			#pragma omp section
+				blurring_inv("sample1_blur_sections_gris12.bmp", 17);
+			#pragma omp section
+				blurring_inv("sample1_blur_sections_gris13.bmp", 15);
+			#pragma omp section
+				blurring_inv("sample1_blur_sections_gris14.bmp", 13);
+			#pragma omp section
+				blurring_inv("sample1_blur_sections_gris15.bmp", 11);
+			#pragma omp section
+				blurring_inv("sample1_blur_sections_gris16.bmp", 9);
+			#pragma omp section
+				blurring_inv("sample1_blur_sections_gris17.bmp", 7);
+			#pragma omp section
+				blurring_inv("sample1_blur_sections_gris18.bmp", 5);  
+			#pragma omp section
+				blurring_inv("sample1_blur_sections_gris19.bmp", 3);
+		}
+	}
+
+	// Measure final time (endTime)
+	const double endTime = omp_get_wtime();
+	// Print total time
+	printf("\nTiempo total  = %f\n", endTime-startTime);
+
+	return 0;
 }
 
 void blurring(char outputImageName[], int sizeM){
@@ -59,7 +70,7 @@ void blurring(char outputImageName[], int sizeM){
 	FILE *image, *outputImage, *lecturas;
 	
 	// Open original image
-	image = fopen("5.bmp","rb");                 //Imagen original a transformar
+	image = fopen("1.bmp","rb");                 //Imagen original a transformar
 	// Create new image
 	outputImage = fopen(outputImageName,"wb");      //Imagen transformada
 	
@@ -232,7 +243,7 @@ void blurring_inv(char outputImgName[], int sizeM){
 	FILE *image, *outputImage, *lecturas;
 
 	// Open original image
-	image = fopen("5.bmp","rb");
+	image = fopen("1.bmp","rb");
 	// Create new image
 	outputImage = fopen(outputImgName,"wb");
 
